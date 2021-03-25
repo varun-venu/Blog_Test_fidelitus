@@ -8,7 +8,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<img src="{{asset('storage/images/'.$post->post_img)}}" class="img-fluid">
+			<img src="{{asset('storage/images/'.$post->post_img)}}" class="img-fluid" width="200px" height="200px">
 		</div>
 	</div>
 	<div class="row mt-4">

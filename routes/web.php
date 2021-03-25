@@ -27,7 +27,10 @@ Route::get('test', function(){
 
 
 Route::resource('posts', PostController::class);
-Route::get('create-post', [PostController::class, 'postAddForm'])->name('posts.postform');
-Route::post('store-comment', [CommentsController::class, 'store'])->name('comments.store');
+Route::middleware('auth')->group(function(){
+	Route::get('create-post', [PostController::class, 'postAddForm'])->name('posts.postform');
+	Route::post('store-comment', [CommentsController::class, 'store'])->name('comments.store');
+});
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
